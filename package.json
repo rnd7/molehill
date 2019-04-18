@@ -1,0 +1,54 @@
+{
+  "name": "molehill",
+  "version": "0.2.3",
+  "description": "Webcrawler for data mining and unification purposes",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./bin/molehill.js",
+    "locate": "./bin/molehill.js locate",
+    "locate-collection": "./bin/molehill.js locate-collection",
+    "list-collection": "./bin/molehill.js list-collection",
+    "create-collection": "./bin/molehill.js create-collection",
+    "locate-config": "./bin/molehill.js locate-config",
+    "list-items": "./bin/molehill.js list-items",
+    "view-items": "./bin/molehill.js view-items",
+    "view-item": "./bin/molehill.js view-item",
+    "locate-item": "./bin/molehill.js locate-item",
+    "crawl-collection": "./bin/molehill.js crawl-collection",
+    "gui": "node src/index.js gui",
+    "server": "node src/index.js server"
+  },
+  "keywords": [
+    "crawler",
+    "datamining",
+    "searchagent",
+    "cli",
+    "webservice",
+    "productivity"
+  ],
+  "engines": {
+    "node": ">0.11.9"
+  },
+  "bin": {
+    "molehill": "bin/molehill.js"
+  },
+  "files": [
+    "settings.json",
+    "src",
+    "bin",
+    "doc"
+  ],
+  "author": "rnd7",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "callsite": "^1.0.0",
+    "chalk": "^2.4.2",
+    "commander": "^2.20.0",
+    "del": "^4.1.0",
+    "express": "^4.16.4",
+    "puppeteer": "^1.14.0",
+    "request": "^2.88.0"
+  }
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Molehill</title>
+  <meta charset="UTF-8">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Static -->
+
+  <div id="app">
+    <div id="header">
+      <div id="logo"><span class="name">Molehill</span><span class="version">0.2.3</span></div>
+    </div>
+    <div id="navi">
+      <div class="tabs">
+        <button id="select" class="tab select">Collections</button>
+        <button id="meta" class="tab meta">Meta</button>
+        <button id="edit" class="tab edit">Config</button>
+        <button id="crawl" class="tab crawl">Crawler</button>
+        <button id="items" class="tab items">Items</button>
+      </div>
+    </div>
+    <div id="content">
+    </div>
+    <div id="footer">
+      <div id="status">
+        Collection: <span id="selected-collection"></span>&nbsp;
+        Crawler Tasks: <span id="crawler-tasks"></span>&nbsp;
+        Downloader Tasks: <span id="downloader-tasks"></span>&nbsp;
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Templates -->
+
+  <template id="items-template">
+    <div class="flex-container">
+      <ul class="item list fullsize">
+      </ul>
+    </div>
+    <div class="toolbar noflex-container">
+      <button name="remove-all" class="danger">Remove All</button>
+    </div>
+  </template>
+
+  <template id="collection-template">
+    <div class="flex-container">
+      <ul class="collection list fullsize"></ul>
+    </div>
+    <div class="toolbar noflex-container">
+      <button name="delete-selected" class="danger">Delete</button>
+      <button name="new-collection">New</button>
+    </div>
+  </template>
+
+  <template id="meta-template">
+    <div class="col flex-container">
+      <label>Name</label>
+      <input name="name">
+      <label>ID</label>
+      <input name="id" disabled>
+      <label>Created</label>
+      <input name="date" disabled>
+    </div>
+    <div class="toolbar noflex-container">
+      <button name="save-meta">Save</button>
+    </div>
+  </template>
+
+  <template id="status-template">
+    <div class="columns flex-container">
+      <div class="column">
+        <h2>Crawler Task Queue</h2>
+        <ul class="crawler task-queue">
+        </ul>
+      </div>
+      <div class="column">
+        <h2>Downloader Task Queue</h2>
+        <ul class="downloader task-queue">
+        </ul>
+      </div>
+    </div>
+    <div class="toolbar noflex-container">
+      <button name="start">Start</button>
+    </div>
+  </template>
+
+  <template id="config-template">
+    <div class="flex-container">
+      <textarea class="editor fullsize"></textarea>
+    </div>
+    <div class="toolbar noflex-container">
+      <button name="save-config">Save</button>
+    </div>
+  </template>
+
+  <template id="error-template">
+    <div class="flex-container">
+      <div class="error fullsize"></div>
+    </div>
+    <div class="toolbar noflex-container">
+    </div>
+  </template>
+
+  <!-- Run -->
+  <script src="api.js"></script>
+  <script src="index.js"></script>
+
+</body>
+</html>

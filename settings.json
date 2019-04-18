@@ -1,0 +1,70 @@
+{
+  "defaultConfig": {
+    "browser": {
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "userAgent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.83 Safari/537.1"
+    },
+    "pages": [
+      "http://localhost:8080/example/"
+    ],
+    "schemes": [
+      {
+        "filter": "/localhost:8080\\/example\\/$/i",
+        "type": "list",
+        "simulateScroll": true,
+        "scrollAttempts": 3,
+        "scrollTimeout": 400,
+        "wait": 500,
+        "queries": [
+          {
+            "selector": "#content ul li a",
+            "all": true,
+            "attribute": "href",
+            "test": "/page=/i",
+            "key": "links",
+            "follow": true
+          }
+        ]
+      },
+      {
+        "filter": "/localhost:8080\\/example\\/\\?/i",
+        "type": "item",
+        "wait": 500,
+        "store": true,
+        "queries": [
+          {
+            "key": "image",
+            "selector": "#content div.item > img",
+            "attribute": "src",
+            "test": "/\\.(jp(e)?g|gif|png)/i",
+            "download": true,
+            "display": "image"
+          },
+          {
+            "key": "name",
+            "selector": "#name",
+            "attribute": "textContent",
+            "display": "value"
+          },
+          {
+            "key": "id",
+            "selector": "#content p.id",
+            "test": "/[a-z0-9]+/",
+            "match": "/Id:\\s([a-z0-9]+)/",
+            "attribute": "textContent",
+            "display": "value"
+          },
+          {
+            "key": "value",
+            "selector": "#content input[name=value]",
+            "attribute": "value",
+            "display": "value"
+          }
+        ]
+      }
+    ]
+  }
+}

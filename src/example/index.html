@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Molehill Example</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+  <!-- Static -->
+
+  <section id="header">
+    <h1>Molehill Example</h1>
+  </section>
+  <section id="content">
+  </section>
+
+  <!-- Templates -->
+
+  <template id="list-template">
+    <ul class="list">
+    </ul>
+  </template>
+
+  <template id="list-item-template">
+    <li class="list-item">
+      <a></a>
+    </li>
+  </template>
+
+  <template id="item-template">
+    <div class="item">
+      <img>
+      <div>
+        <h2 id="name"></h2>
+        <p class="id"></p>
+        <input name="value" disabled>
+      </div>
+    </div>
+  </template>
+
+
+  <!-- Run -->
+  <script>
+    const names = ["Sophia", "Jackson", "Olivia", "Liam", "Emma", "Noah", "Ava", "Aiden", "Isabella", "Caden", "Aria", "Grayson", "Riley", "Lucas", "Amelia", "Mason", "Mia", "Oliver", "Layla", "Elijah", "Zoe", "Logan", "Mila", "Carter", "Charlotte", "Ethan", "Harper", "Muhammad", "Lily", "Jayden", "Chloe", "Michael", "Aaliyah", "James", "Adalyn", "Sebastian", "Evelyn", "Alexander", "Avery", "Mateo", "Aubrey", "Jacob", "Ella", "Ryan", "Camilla", "Benjamin", "Nora", "Daniel", "Scarlett", "William", "Maya", "Jack", "Emily", "Julian", "Abigail", "Leo", "Madison", "Jayce", "Eliana", "Caleb", "Luna", "Luke", "Ellie", "Henry", "Hannah", "Gabriel", "Arianna", "Matthew", "Kinsley", "Wyatt", "Elizabeth", "Owen", "Leah", "Connor", "Hailey", "Josiah", "Sarah", "Levi", "Victoria", "David", "Paisley", "Isaac", "Elena", "John", "Penelope", "Carson", "Everly", "Cameron", "Madelyn", "Isaiah", "Addison", "Asher", "Grace", "Lincoln", "Brooklyn", "Adam", "Charlie", "Nicholas", "Isabelle", "Landon"]
+    const images = 30
+    const url = new URL(window.location.href);
+    const page = url.searchParams.get("page");
+    const image = url.searchParams.get("image");
+    const name = url.searchParams.get("name");
+    function getTemplate(selector) {
+      const t = document.querySelector(selector).cloneNode(true)
+      return document.importNode(t.content, true)
+    }
+    if (!page) {
+      console.log("list")
+      const list = getTemplate('#list-template')
+      const len = Math.random()*20
+      for (var i = 0; i<len; i++) {
+        const listItem = getTemplate('#list-item-template')
+        const listItemUrl = new URL(window.location.href)
+        const id = Date.now().toString(36)+(Math.floor(Math.random() * 1e10)).toString(36)
+        const nameIndex = (Math.random() * names.length) >> 0
+        const imageIndex = (Math.random() * images) >> 0
+        listItemUrl.searchParams.set("page", id)
+        listItemUrl.searchParams.set("name", nameIndex)
+        listItemUrl.searchParams.set("image", imageIndex)
+        listItem.querySelector('a').href = listItemUrl.toString()
+        listItem.querySelector('a').innerHTML = "Link to " + names[nameIndex]
+        listItem.querySelector('a').target = "_blank"
+        list.querySelector('ul').appendChild(listItem)
+      }
+      document.querySelector('#content').appendChild(list)
+    } else {
+      console.log("item")
+      const item = getTemplate('#item-template')
+      item.querySelector("img").src = 'media/'+image+'.png'
+      item.querySelector("h2").innerHTML = names[parseInt(name)]
+      item.querySelector("p").innerHTML = "Id: "+ page
+      item.querySelector("input").value = name
+      document.querySelector('#content').appendChild(item)
+    }
+
+
+  </script>
+
+</body>
+</html>
