@@ -563,10 +563,10 @@ You can use ```wait``` to define an amount of milliseconds the crawler waits bef
 If you want to create and persist the matched page as collection Item you must set ```store``` to true.
 
 You can use multiple ```queries``` to extract data.  
-```
 
 Example
-""schemes": [
+```
+"schemes": [
   {
     "filter": "/localhost:8080\\/example\\/$/i",
     "type": "list",
