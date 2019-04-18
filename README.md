@@ -400,10 +400,6 @@ Start the crawler by clicking on start.
 
 Watch the crawler processing its queue. The small status text in the footer keeps you informed. By default three pages are crawled in parallel. The queue shows only tasks that are currently not processed.
 
-![crawler-queue](https://raw.githubusercontent.com/rnd7/molehill/master/doc/molehill-crawler-queue.png)
-
-Watch the crawler processing its queue. The small status text in the footer keeps you informed. By default three pages are crawled in parallel.
-
 ![items](https://raw.githubusercontent.com/rnd7/molehill/master/doc/molehill-items.png)
 
 The resulting unified data displayed in a list.
