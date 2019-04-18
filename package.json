@@ -19,6 +19,10 @@
     "gui": "node src/index.js gui",
     "server": "node src/index.js server"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rnd7/molehill.git"
+  },
   "keywords": [
     "crawler",
     "datamining",
