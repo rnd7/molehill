@@ -429,8 +429,6 @@ GET /example/?page=julook2s161dabw&name=24&image=8
 
 ![molehill-example-item](https://raw.githubusercontent.com/rnd7/molehill/master/doc/molehill-example-item.png)
 
-The resulting unified data displayed in a list.
-
 ## App Data
 Molehill stores its data including all db entries and files downloaded by the crawler within the shared local userspace.
 
