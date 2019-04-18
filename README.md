@@ -59,7 +59,7 @@ Molehill is using git like subcommands.
 ```
 npm run subcommand -- --option
 npx molehill subcommand --option
-./molehill subcommand --option
+./bin/molehill.js subcommand --option
 ```
 
 #### locate
@@ -71,7 +71,7 @@ Example
 ```
 npm run locate
 npx molehill locate
-./molehill locate
+./bin/molehill.js locate
 ```
 
 #### locate-collection
@@ -83,7 +83,7 @@ Example
 ```
 npm run locate-collection 3fed53f7986155353b41006a4d720a23
 npx molehill locate-collection 3fed53f7986155353b41006a4d720a23
-./molehill locate-collection 3fed53f7986155353b41006a4d720a23
+./bin/molehill.js locate-collection 3fed53f7986155353b41006a4d720a23
 ```
 
 #### list-collections
@@ -95,7 +95,7 @@ Example
 ```
 npm run list-collections
 npx molehill list-collections
-./molehill list-collections
+./bin/molehill.js list-collections
 ```
 
 #### create-collection
@@ -107,7 +107,7 @@ Example
 ```
 npm run create-collection "Collection Name"
 npx molehill create-collection "Collection Name"
-./molehill create-collection "Collection Name"
+./bin/molehill.js create-collection "Collection Name"
 ```
 
 #### locate-config
@@ -119,7 +119,7 @@ Example
 ```
 npm run locate-config 3fed53f7986155353b41006a4d720a23
 npx molehill locate-config 3fed53f7986155353b41006a4d720a23
-./molehill locate-config 3fed53f7986155353b41006a4d720a23
+./bin/molehill.js locate-config 3fed53f7986155353b41006a4d720a23
 ```
 
 #### list-items
@@ -131,7 +131,7 @@ Example
 ```
 npm run list-items 3fed53f7986155353b41006a4d720a23
 npx molehill list-items 3fed53f7986155353b41006a4d720a23
-./molehill list-items 3fed53f7986155353b41006a4d720a23
+./bin/molehill.js list-items 3fed53f7986155353b41006a4d720a23
 ```
 
 #### view-items
@@ -143,7 +143,7 @@ Example
 ```
 npm run view-items 3fed53f7986155353b41006a4d720a23
 npx molehill view-items 3fed53f7986155353b41006a4d720a23
-./molehill view-items 3fed53f7986155353b41006a4d720a23
+./bin/molehill.js view-items 3fed53f7986155353b41006a4d720a23
 ```
 
 #### view-item
@@ -155,7 +155,7 @@ Example
 ```
 npm run view-item 3fed53f7986155353b41006a4d720a23 91461306968c82a610245b690db3bed7
 npx molehill view-item 3fed53f7986155353b41006a4d720a23 91461306968c82a610245b690db3bed7
-./molehill view-item 3fed53f7986155353b41006a4d720a23 91461306968c82a610245b690db3bed7
+./bin/molehill.js view-item 3fed53f7986155353b41006a4d720a23 91461306968c82a610245b690db3bed7
 ```
 
 #### locate-item
@@ -167,7 +167,7 @@ Example
 ```
 npm run locate-item 3fed53f7986155353b41006a4d720a23 91461306968c82a610245b690db3bed7
 npx molehill locate-item 3fed53f7986155353b41006a4d720a23 91461306968c82a610245b690db3bed7
-./molehill locate-item 3fed53f7986155353b41006a4d720a23 91461306968c82a610245b690db3bed7
+./bin/molehill.js locate-item 3fed53f7986155353b41006a4d720a23 91461306968c82a610245b690db3bed7
 ```
 
 #### crawl-collection
@@ -179,7 +179,7 @@ Example
 ```
 npm run crawl-collection 3fed53f7986155353b41006a4d720a23
 npx molehill crawl-collection 3fed53f7986155353b41006a4d720a23
-./molehill crawl-collection 3fed53f7986155353b41006a4d720a23
+./bin/molehill.js crawl-collection 3fed53f7986155353b41006a4d720a23
 ```
 
 #### remove-collection
@@ -191,7 +191,7 @@ Example
 ```
 npm run remove-collection 3fed53f7986155353b41006a4d720a23
 npx molehill remove-collection 3fed53f7986155353b41006a4d720a23
-./molehill remove-collection 3fed53f7986155353b41006a4d720a23
+./bin/molehill.js remove-collection 3fed53f7986155353b41006a4d720a23
 ```
 
 
@@ -212,7 +212,7 @@ Example
 ```
 npm run gui -- --port 3000
 npx molehill gui --port 3000
-./molehill gui --port 3000
+./bin/molehill.js gui --port 3000
 ```
 
 #### server
@@ -221,7 +221,7 @@ Start Webservice
 server
 ```
 
-##### Commandline Options
+Commandline Options
 
 Configure Webserver Port. Defaults to 8080
 ```
@@ -232,7 +232,7 @@ Example
 ```
 npm run server -- --port 3000
 npx molehill server --port 3000
-./molehill server --port 3000
+./bin/molehill.js server --port 3000
 ```
 
 
@@ -377,27 +377,35 @@ GET /
 ```
 
 ![collection](https://raw.githubusercontent.com/rnd7/molehill/master/doc/molehill-collection.png)
+
 The Startscreen of the client displayed in the browser shipped with Molehill.
 
 ![collection-selected](https://raw.githubusercontent.com/rnd7/molehill/master/doc/molehill-collection-selected.png)
+
 Click on a collection in order to select it. Click on new to create a new one.
 
 ![meta](https://raw.githubusercontent.com/rnd7/molehill/master/doc/molehill-meta.png)
-Change the name of the selected collection. Also display some meta data. Click save to store changes.
+
+Change the name of the selected collection. Click save to store changes.
 
 ![config](https://raw.githubusercontent.com/rnd7/molehill/master/doc/molehill-config.png)
+
 You can edit the config file of the selected collection using the built in editor.
 
 ![crawler](https://raw.githubusercontent.com/rnd7/molehill/master/doc/molehill-crawler.png)
+
 Start the crawler by clicking on start.
 
 ![crawler-queue](https://raw.githubusercontent.com/rnd7/molehill/master/doc/molehill-crawler-queue.png)
+
 Watch the crawler processing its queue. The small status text in the footer keeps you informed. By default three pages are crawled in parallel. The queue shows only tasks that are currently not processed.
 
 ![crawler-queue](https://raw.githubusercontent.com/rnd7/molehill/master/doc/molehill-crawler-queue.png)
+
 Watch the crawler processing its queue. The small status text in the footer keeps you informed. By default three pages are crawled in parallel.
 
 ![items](https://raw.githubusercontent.com/rnd7/molehill/master/doc/molehill-items.png)
+
 The resulting unified data displayed in a list.
 
 
@@ -406,9 +414,11 @@ To test the crawler and provide valid endpoints for the default config, Molehill
 
 ### List View
 Endpoint serving the example list
+
 ```
 GET /example
 ```
+
 ![molehill-example-list](https://raw.githubusercontent.com/rnd7/molehill/master/doc/molehill-example-list.png)
 
 ### Item View
@@ -416,7 +426,9 @@ Endpoint serving parametric example entries.
 ```
 GET /example/?page=julook2s161dabw&name=24&image=8
 ```
+
 ![molehill-example-item](https://raw.githubusercontent.com/rnd7/molehill/master/doc/molehill-example-item.png)
+
 The resulting unified data displayed in a list.
 
 ## App Data
@@ -646,12 +658,13 @@ The Collection module provides almost all Molehill functionality. It utilizes th
 require('molehill').Collection
 ```
 
-Static Properties
+#### Static Properties
 ```
 cache
 indices
 ```
 
+#### Static Methods
 ```
 init()
 setPath(str)
@@ -673,19 +686,19 @@ The Crawler module is a task worker that fetches websites and queries DOM Elemen
 require('molehill').Crawler
 ```
 
-Events
+#### Events
 ```
 IDLE,
 PROCESS
 CHANGE
 ```
 
-Static Properties
+#### Static Properties
 ```
 tasks
 ```
 
-Static methods
+#### Static methods
 ```
 stop()
 addTask(url, config)
@@ -710,17 +723,17 @@ The Downloader is a task worker that simply downloads binaries, hashes the url t
 require('molehill').Downloader
 ```
 
-Events
+#### Events
 ```
 CHANGE
 ```
 
-Static Properties
+#### Static Properties
 ```
 tasks
 ```
 
-Static methods
+#### Static methods
 ```
 getFilepath(url, path)
 addTask(url, path)
@@ -745,7 +758,7 @@ Basically a wrapper that persists the path and reuses metadata.
 ```
 new FSDB(path)
 ```
-Methods
+#### Methods
 ```
 getDBPath()
 getFilePath(id)
@@ -827,7 +840,7 @@ output.color = 'bgBlack'
 output.method = log
 ```
 
-#### Output Formatting
+#### Output and formatting
 
 ```
 print(...args)
@@ -864,6 +877,7 @@ The Molehill webservice.
 require('molehill').Webservice
 ```
 
+#### Static Methods
 ```
 start(port)
 stop()
@@ -877,6 +891,7 @@ Filesystem utility methods. Basically a simple async await abstraction and gener
 require('molehill').filesystem
 ```
 
+#### Static Methods
 ```
 remove(path)
 listDirectory(path)
