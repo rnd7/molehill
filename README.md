@@ -5,10 +5,10 @@ It comes in different flavours. You can interact using its CLI, Webservice or GU
 
 It strongly depends on puppeteer, commander, callsite and express.
 
-# Warning
+## Warning
 If you use the Molehill Webservice be sure not to expose it to the Internet. There is not authentication or any kind of filesystem access restriction. Always use an authentication layer if you need to access the GUI over the Internet. Molehill is not designed as public Web Frontend! Everybody who has access owns your computer, really.
 
-# Legal Notice
+## Legal Notice
 Depending on the site you are crawling and what you do with the gathered data there might be legal problems. I do not encourage to do any illegal acts with this software.
 
 
