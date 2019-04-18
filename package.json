@@ -1,6 +1,6 @@
 {
   "name": "molehill",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Webcrawler for data mining and unification purposes",
   "main": "src/index.js",
   "scripts": {
