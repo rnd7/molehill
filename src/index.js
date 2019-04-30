@@ -40,7 +40,7 @@ function init() {
   const SETTINGS_FILE_PATH = pathUtil.resolve(APP_DATA_PATH, 'settings.json' )
   const COLLECTION_PATH = pathUtil.resolve(APP_DATA_PATH, 'collection' )
 
-  const version = "0.2.5"
+  const version = "0.2.6"
 
   let settings = {}
 
