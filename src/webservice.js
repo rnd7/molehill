@@ -173,9 +173,9 @@ webservice.post('/api/crawler/start/:cid', async (req, res) => {
   res.end()
 });
 
-webservice.use("/example", express.static(pathUtil.resolve('src', 'example')))
+webservice.use("/example", express.static(pathUtil.resolve(__dirname, 'example')))
 
-webservice.use("/", express.static(pathUtil.resolve('src', 'client')))
+webservice.use("/", express.static(pathUtil.resolve(__dirname, 'client')))
 
 
 async function start(port) {
