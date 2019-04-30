@@ -17,7 +17,6 @@ const Logger = require('./logger.js')
 
 const os = require('os')
 const USER_DATA_PATH = os.homedir('home')
-
 function getAppDataPath() {
   if (process.env.APPDATA) return process.env.APPDATA
   const home = process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE
@@ -48,7 +47,7 @@ function init() {
     Logger.fn()
     fs.mkdirSync(COLLECTION_PATH, { recursive: true })
     if (!await filesystem.verifyFile(SETTINGS_FILE_PATH)) {
-      settings = await filesystem.loadJSON("settings.json") // load defaults
+      settings = await filesystem.loadJSON(pathUtil.resolve(__dirname, '..','settings.json')) // load defaults
       await saveSettings()
     } else {
       await loadSettings()
