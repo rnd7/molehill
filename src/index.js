@@ -15,12 +15,25 @@ const Webservice = require('./webservice.js')
 const Collection = require('./collection.js')
 const Logger = require('./logger.js')
 
-const getPath = require('platform-folders').default
-const USER_DATA_PATH = getPath('home');
+const os = require('os')
+const USER_DATA_PATH = os.homedir('home')
+
+function getAppDataPath() {
+  if (process.env.APPDATA) return process.env.APPDATA
+  const home = process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE
+  switch (os.platform) {
+    case "darwin":
+      return pathUtil.resolve(home , 'Library', 'Preferences')
+    case "win32":
+      return pathUtil.resolve(home, 'AppData', 'Roaming')
+    default:
+      return pathUtil.resolve(home , '.local', 'share')
+  }
+}
 
 function init() {
   const APP_DATA_PATH = pathUtil.resolve(
-    getPath('appData'),
+    getAppDataPath(),
     'molehill'
   )
 
