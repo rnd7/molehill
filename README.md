@@ -13,9 +13,14 @@ Depending on the site you are crawling and what you do with the gathered data th
 
 
 ## Installation
-You need node and npm installed on your machine. It should work on all platforms that are supported by puppeteer. I only tested it on a linux machine.
+You need node and npm installed on your machine. It should work on all platforms that are supported by puppeteer. I only tested it on a ubuntu linux and a windows 10 machine.
 
+Install as Application.
+```
+npm -i molehill -g
+```
 
+Install as local library
 ```
 npm -i molehill
 ```
@@ -25,15 +30,15 @@ The Commandline Interface provides different commands to work with Molehill coll
 
 ### Main Command
 
+Using npx. Even if this will probably work without installation, I recommend to install Molehill as Application.
+```
+npx molehill
+```
+
 Execute from dir using shell
 ```
 ./bin/molehill
 
-```
-
-Using npx
-```
-npx molehill
 ```
 
 #### Commandline Options
@@ -57,8 +62,8 @@ Turn on verbose debug logs
 Molehill is using git like subcommands.
 
 ```
-npm run subcommand -- --option
 npx molehill subcommand --option
+npm run subcommand -- --option
 ./bin/molehill.js subcommand --option
 ```
 
@@ -69,8 +74,8 @@ locate
 ```
 Example
 ```
-npm run locate
 npx molehill locate
+npm run locate
 ./bin/molehill.js locate
 ```
 
@@ -81,8 +86,8 @@ locate-collection <collection>
 ```
 Example
 ```
-npm run locate-collection 3fed53f7986155353b41006a4d720a23
 npx molehill locate-collection 3fed53f7986155353b41006a4d720a23
+npm run locate-collection 3fed53f7986155353b41006a4d720a23
 ./bin/molehill.js locate-collection 3fed53f7986155353b41006a4d720a23
 ```
 
@@ -93,8 +98,8 @@ list-collections
 ```
 Example
 ```
-npm run list-collections
 npx molehill list-collections
+npm run list-collections
 ./bin/molehill.js list-collections
 ```
 
@@ -105,8 +110,8 @@ create-collection <name>
 ```
 Example
 ```
-npm run create-collection "Collection Name"
 npx molehill create-collection "Collection Name"
+npm run create-collection "Collection Name"
 ./bin/molehill.js create-collection "Collection Name"
 ```
 
@@ -117,8 +122,8 @@ locate-config <collection>
 ```
 Example
 ```
-npm run locate-config 3fed53f7986155353b41006a4d720a23
 npx molehill locate-config 3fed53f7986155353b41006a4d720a23
+npm run locate-config 3fed53f7986155353b41006a4d720a23
 ./bin/molehill.js locate-config 3fed53f7986155353b41006a4d720a23
 ```
 
@@ -129,8 +134,8 @@ list-items <collection>
 ```
 Example
 ```
-npm run list-items 3fed53f7986155353b41006a4d720a23
 npx molehill list-items 3fed53f7986155353b41006a4d720a23
+npm run list-items 3fed53f7986155353b41006a4d720a23
 ./bin/molehill.js list-items 3fed53f7986155353b41006a4d720a23
 ```
 
@@ -141,8 +146,8 @@ view-items <collection>
 ```
 Example
 ```
-npm run view-items 3fed53f7986155353b41006a4d720a23
 npx molehill view-items 3fed53f7986155353b41006a4d720a23
+npm run view-items 3fed53f7986155353b41006a4d720a23
 ./bin/molehill.js view-items 3fed53f7986155353b41006a4d720a23
 ```
 
@@ -153,8 +158,8 @@ view-item <collection> <item>
 ```
 Example
 ```
-npm run view-item 3fed53f7986155353b41006a4d720a23 91461306968c82a610245b690db3bed7
 npx molehill view-item 3fed53f7986155353b41006a4d720a23 91461306968c82a610245b690db3bed7
+npm run view-item 3fed53f7986155353b41006a4d720a23 91461306968c82a610245b690db3bed7
 ./bin/molehill.js view-item 3fed53f7986155353b41006a4d720a23 91461306968c82a610245b690db3bed7
 ```
 
@@ -165,8 +170,8 @@ locate-item <collection> <item>
 ```
 Example
 ```
-npm run locate-item 3fed53f7986155353b41006a4d720a23 91461306968c82a610245b690db3bed7
 npx molehill locate-item 3fed53f7986155353b41006a4d720a23 91461306968c82a610245b690db3bed7
+npm run locate-item 3fed53f7986155353b41006a4d720a23 91461306968c82a610245b690db3bed7
 ./bin/molehill.js locate-item 3fed53f7986155353b41006a4d720a23 91461306968c82a610245b690db3bed7
 ```
 
@@ -177,8 +182,8 @@ crawl-collection <collection>
 ```
 Example
 ```
-npm run crawl-collection 3fed53f7986155353b41006a4d720a23
 npx molehill crawl-collection 3fed53f7986155353b41006a4d720a23
+npm run crawl-collection 3fed53f7986155353b41006a4d720a23
 ./bin/molehill.js crawl-collection 3fed53f7986155353b41006a4d720a23
 ```
 
@@ -189,8 +194,8 @@ remove-collection <collection>
 ```
 Example
 ```
-npm run remove-collection 3fed53f7986155353b41006a4d720a23
 npx molehill remove-collection 3fed53f7986155353b41006a4d720a23
+npm run remove-collection 3fed53f7986155353b41006a4d720a23
 ./bin/molehill.js remove-collection 3fed53f7986155353b41006a4d720a23
 ```
 
@@ -210,8 +215,8 @@ Configure Webserver Port. Defaults to 8080
 
 Example
 ```
-npm run gui -- --port 3000
 npx molehill gui --port 3000
+npm run gui -- --port 3000
 ./bin/molehill.js gui --port 3000
 ```
 
@@ -230,8 +235,8 @@ Configure Webserver Port. Defaults to 8080
 
 Example
 ```
-npm run server -- --port 3000
 npx molehill server --port 3000
+npm run server -- --port 3000
 ./bin/molehill.js server --port 3000
 ```
 
