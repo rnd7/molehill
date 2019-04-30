@@ -3,7 +3,7 @@ Molehill is a webcrawler for repetitive data mining and unification purposes. It
 
 It comes in different flavours. You can interact using its CLI, Webservice or GUI, automate it using shell scripts, or even use it as library with your node.js project.
 
-It strongly depends on puppeteer, commander, callsite and express.
+It strongly depends on puppeteer, commander and express.
 
 ## Warning
 If you use the Molehill Webservice be sure not to expose it to the Internet. There is not authentication or any kind of filesystem access restriction. Always use an authentication layer if you need to access the GUI over the Internet. Molehill is not designed as public Web Frontend! Everybody who has access owns your computer, really.
